@@ -4,3 +4,16 @@
 node_modules/
 .env
 .env.local
+
+# Local maintainer artifacts (do not distribute)
+.upstream/
+.claude/worktrees/
+.venv-dev/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Project-local Claude state — keep .claude/commands/ and .claude/rules/ versioned,
+# but ignore anything ephemeral.
+.claude/local/
+.claude/settings.local.json

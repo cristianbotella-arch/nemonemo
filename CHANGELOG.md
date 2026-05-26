@@ -1,6 +1,32 @@
 # Changelog
 
 > Format: each release is `## vX.Y.Z — YYYY-MM-DD` with a one-line summary, `Plugins bumped:`, `Marketplace:`, `Breaking changes:`, and (when applicable) `Upstream pin state`.
+>
+> Maintainer-only entries (no consumer-facing changes) are noted as `## maintenance — YYYY-MM-DD` and do not bump `metadata.version`.
+
+## maintenance — 2026-05-26
+
+Added local maintainer tooling — no changes to the catalog, no version bump.
+
+What landed:
+- `.claude/commands/` (4 local slash commands, not distributed to consumers):
+  - `/marketplace-health` — wraps `scripts/marketplace-health.sh`
+  - `/marketplace-release` — marketplace release flow (was at `/release` in forge-commit upstream; renamed here to avoid collision with the consumer-facing reference plugin)
+  - `/update-check` — for vendored plugins with `customizations.json`
+  - `/check-references` — NEW; compares reference-mode pins against upstream marketplaces (no equivalent in dev-forge, since they use pure vendoring)
+- `.claude/rules/` (auto-loaded project rules):
+  - `plugin-authoring.md` — conventions for plugin files
+  - `marketplace-consistency.md` — README ↔ marketplace.json checks
+- `scripts/marketplace-health.sh` — pre-publish sanity check (schema, paths, version drift), auto-skips reference entries
+- `docs/`:
+  - `customizations-pattern.md` — vendor + customizations model
+  - `versioning.md` — semver policy for plugins and marketplace
+  - `update-check-guide.md` — detailed flow for the `/update-check` command
+- `.gitignore` updated for `.upstream/`, `.claude/worktrees/`, `.claude/settings.local.json`, etc.
+
+Marketplace: no change (still v1.2.0).
+
+Breaking changes: none.
 
 ## v1.2.0 — 2026-05-26
 
