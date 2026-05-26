@@ -1,12 +1,12 @@
 {
-  "description": "SessionStart greeting — outputs the ASCII Siamese cat as additional session context.",
+  "description": "SessionStart greeting — prints the NEMO banner (cat + ball) followed by a random cat fact.",
   "hooks": {
     "SessionStart": [
       {
         "hooks": [
           {
             "type": "command",
-            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/hooks/siamese.txt\""
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/greet.sh\""
           }
         ]
       }

@@ -2,6 +2,17 @@
 
 > Format: each release is `## vX.Y.Z — YYYY-MM-DD` with a one-line summary, `Plugins bumped:`, `Marketplace:`, `Breaking changes:`, and (when applicable) `Upstream pin state`.
 
+## v1.2.0 — 2026-05-26
+
+`nemo-siamese` evoluciona: banner con cabecera NEMO, gato + pelota y curiosidad aleatoria sobre gatos al final.
+
+Plugins bumped:
+- nemo-siamese: 0.1.0 → 0.2.0 (minor — añade cabecera NEMO, pelota, 15 curiosidades aleatorias, script bash `greet.sh` y `facts.txt`)
+
+Marketplace: 1.1.0 → 1.2.0 (minor — feature bump en plugin propio)
+
+Breaking changes: none
+
 ## v1.1.0 — 2026-05-26
 
 Primer plugin propio (vendorizado): `nemo-siamese` añade un saludo ASCII de un gato siamés en cada `SessionStart`.
