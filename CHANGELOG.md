@@ -4,6 +4,17 @@
 >
 > Maintainer-only entries (no consumer-facing changes) are noted as `## maintenance — YYYY-MM-DD` and do not bump `metadata.version`.
 
+## v1.4.0 — 2026-05-26
+
+Nuevo plugin propio `nemo-caveman`: añade el slash command `/caveman` para activar un modo de respuestas ultra-compactas (drop fluff, keep technical substance). Las instrucciones del modo van empotradas en el comando para que el plugin sea self-contained y portable entre máquinas — sin dependencia del plugin `forge-mattpocock`. Reglas adaptadas de `mattpocock/skills` (MIT), con atribución en el archivo.
+
+Plugins bumped:
+- nemo-caveman: NEW → 0.1.0 (plugin propio nuevo)
+
+Marketplace: 1.3.2 → 1.4.0 (minor — nuevo plugin propio, sin breaking)
+
+Breaking changes: none
+
 ## v1.3.2 — 2026-05-26
 
 Simplificación del banner de `nemo-siamese`: se eliminan el marco, el rótulo "✦ NEMO ✦" y la pelota. Queda solo el gato ASCII + el cat fact. Descripción del plugin actualizada para reflejarlo.

@@ -1,0 +1,10 @@
+{
+  "name": "nemo-caveman",
+  "description": "Slash command /caveman: activa modo de respuestas ultra-compactas estilo caveman (drop fluff, keep technical substance).",
+  "version": "0.1.0",
+  "author": {
+    "name": "cristianbotella-arch"
+  },
+  "license": "MIT",
+  "keywords": ["caveman", "terse", "compact", "command"]
+}

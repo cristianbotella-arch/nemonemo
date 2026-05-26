@@ -14,6 +14,7 @@ Combina dos modelos:
 
 # Instalar los plugins que quieras
 /plugin install nemo-siamese          # gato siamés en ASCII al abrir sesión
+/plugin install nemo-caveman          # /caveman: respuestas ultra-compactas
 /plugin install forge-keeper          # /update-check + mantenimiento de contexto
 /plugin install forge-commit
 /plugin install forge-security
@@ -29,6 +30,7 @@ Combina dos modelos:
 | Plugin | Tipo | Descripción |
 |--------|------|-------------|
 | **nemo-siamese** | Hook | `SessionStart` que imprime un ASCII de un gato siamés al empezar cada sesión |
+| **nemo-caveman** | Command | `/caveman` activa modo respuestas ultra-compactas (drop fluff, keep technical substance). Adaptado de `mattpocock/skills` (MIT) |
 
 ### Referenciados desde [`dmedina-dev/dev-forge`](https://github.com/dmedina-dev/dev-forge)
 
@@ -48,11 +50,15 @@ nemonemo/
 ├── .claude-plugin/
 │   └── marketplace.json       # Catálogo (entries propias + referencias)
 ├── plugins/
-│   └── nemo-siamese/          # Plugin propio (vendorizado)
+│   ├── nemo-siamese/          # Plugin propio (vendorizado)
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── hooks/
+│   │       ├── hooks.json
+│   │       └── siamese.txt
+│   └── nemo-caveman/          # Plugin propio (vendorizado)
 │       ├── .claude-plugin/plugin.json
-│       └── hooks/
-│           ├── hooks.json
-│           └── siamese.txt
+│       └── commands/
+│           └── caveman.md
 ├── CHANGELOG.md
 ├── LICENSE
 └── README.md

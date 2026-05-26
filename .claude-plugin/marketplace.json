@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Nemonemo — marketplace personal de plugins de Claude Code. Plugins propios + curaduría de terceros como referencia.",
-    "version": "1.3.2"
+    "version": "1.4.0"
   },
   "plugins": [
     {
@@ -17,6 +17,16 @@
         "path": "plugins/nemo-siamese"
       },
       "version": "0.2.2"
+    },
+    {
+      "name": "nemo-caveman",
+      "description": "Slash command /caveman: activa modo de respuestas ultra-compactas estilo caveman (drop fluff, keep technical substance).",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/cristianbotella-arch/nemonemo.git",
+        "path": "plugins/nemo-caveman"
+      },
+      "version": "0.1.0"
     },
     {
       "name": "forge-commit",
