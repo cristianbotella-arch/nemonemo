@@ -4,10 +4,20 @@
     "name": "cristianbotella-arch"
   },
   "metadata": {
-    "description": "Nemonemo — marketplace personal de plugins de Claude Code. Curaduría de plugins de terceros como referencia, con espacio para añadir plugins propios en el futuro.",
-    "version": "1.0.0"
+    "description": "Nemonemo — marketplace personal de plugins de Claude Code. Plugins propios + curaduría de terceros como referencia.",
+    "version": "1.1.0"
   },
   "plugins": [
+    {
+      "name": "nemo-siamese",
+      "description": "SessionStart greeting: prints an ASCII Siamese cat at the beginning of every Claude Code session.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/cristianbotella-arch/nemonemo.git",
+        "path": "plugins/nemo-siamese"
+      },
+      "version": "0.1.0"
+    },
     {
       "name": "forge-commit",
       "description": "Git workflow commands: /commit, /commit-push-pr, /clean-gone, /release (marketplace release).",

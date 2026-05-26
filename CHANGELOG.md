@@ -2,6 +2,17 @@
 
 > Format: each release is `## vX.Y.Z — YYYY-MM-DD` with a one-line summary, `Plugins bumped:`, `Marketplace:`, `Breaking changes:`, and (when applicable) `Upstream pin state`.
 
+## v1.1.0 — 2026-05-26
+
+Primer plugin propio (vendorizado): `nemo-siamese` añade un saludo ASCII de un gato siamés en cada `SessionStart`.
+
+Plugins bumped:
+- nemo-siamese: NEW → 0.1.0 (minor — primer release; hook `SessionStart` que imprime ASCII art)
+
+Marketplace: 1.0.0 → 1.1.0 (minor — nuevo plugin propio, sin breaking)
+
+Breaking changes: none
+
 ## v1.0.0 — 2026-05-26
 
 Cambio de modelo: de **vendoring** (copias en `plugins/nemo-*`) a **referencia** (catálogo que apunta a `dmedina-dev/dev-forge`). Se añade `forge-keeper` para tener `/update-check`.

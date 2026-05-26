@@ -2,7 +2,9 @@
 
 Marketplace personal de plugins de Claude Code.
 
-Modelo: **referencia** a plugins de terceros (no vendorizamos, apuntamos directamente a sus repos). Cuando los upstreams se actualizan, basta con bumpear la versión en `marketplace.json` para que los consumers vean los cambios — y `/update-check` te avisa cuándo toca hacerlo.
+Combina dos modelos:
+- **Plugins propios** (vendorizados en `plugins/`): mantenidos por el owner del marketplace.
+- **Referencias a plugins de terceros** (apuntan directamente al repo upstream): el catálogo actúa como un pin curado. Cuando upstream se actualiza, basta con bumpear la versión en `marketplace.json` — y `/update-check` te avisa cuándo toca hacerlo.
 
 ## Quick start
 
@@ -11,7 +13,8 @@ Modelo: **referencia** a plugins de terceros (no vendorizamos, apuntamos directa
 /plugin marketplace add cristianbotella-arch/nemonemo
 
 # Instalar los plugins que quieras
-/plugin install forge-keeper          # para tener /update-check (recomendado)
+/plugin install nemo-siamese          # gato siamés en ASCII al abrir sesión
+/plugin install forge-keeper          # /update-check + mantenimiento de contexto
 /plugin install forge-commit
 /plugin install forge-security
 /plugin install forge-deepthink
@@ -20,7 +23,13 @@ Modelo: **referencia** a plugins de terceros (no vendorizamos, apuntamos directa
 
 ## Plugins
 
-Todos referenciados desde [`dmedina-dev/dev-forge`](https://github.com/dmedina-dev/dev-forge) (David Medina, MIT).
+### Propios (vendorizados)
+
+| Plugin | Tipo | Descripción |
+|--------|------|-------------|
+| **nemo-siamese** | Hook | `SessionStart` que imprime un ASCII de un gato siamés al empezar cada sesión |
+
+### Referenciados desde [`dmedina-dev/dev-forge`](https://github.com/dmedina-dev/dev-forge)
 
 | Plugin | Tipo | Descripción |
 |--------|------|-------------|
@@ -35,33 +44,37 @@ Todos referenciados desde [`dmedina-dev/dev-forge`](https://github.com/dmedina-d
 ```
 nemonemo/
 ├── .claude-plugin/
-│   └── marketplace.json       # Solo el catálogo — los plugins viven en el repo upstream
+│   └── marketplace.json       # Catálogo (entries propias + referencias)
+├── plugins/
+│   └── nemo-siamese/          # Plugin propio (vendorizado)
+│       ├── .claude-plugin/plugin.json
+│       └── hooks/
+│           ├── hooks.json
+│           └── siamese.txt
 ├── CHANGELOG.md
 ├── LICENSE
 └── README.md
 ```
 
-No hay carpeta `plugins/` aquí: cada `source.url` apunta a `https://github.com/dmedina-dev/dev-forge.git` con su `path` específico, y Claude Code los baja directamente de allí cuando un consumer hace `/plugin install`.
+Las entries que apuntan a `dev-forge` no traen archivos al repo — Claude Code los baja directamente del upstream cuando un consumer hace `/plugin install`.
 
 ## Cómo funcionan los updates
 
-**Modelo de referencia**: el catálogo es tuyo (tú decides qué versión exponer a tus consumers), pero los archivos del plugin viven en el repo upstream.
+**Referencias** (los `forge-*`): el catálogo es tuyo (tú decides qué versión exponer), pero los archivos viven en el repo upstream.
 
-Flujo cuando upstream publica algo nuevo:
-
-1. `/update-check` (de `forge-keeper`) — analiza tu `marketplace.json` y te dice qué plugins tienen una versión más nueva en upstream
-2. Decides cuál actualizar y a qué versión
-3. Bumpeas el campo `version` de esa entry en tu `marketplace.json` para que coincida con el upstream
+1. `/update-check` (de `forge-keeper`) — analiza tu `marketplace.json` y te dice qué plugins tienen versión más nueva en upstream
+2. Decides cuáles actualizar y a qué versión
+3. Bumpeas el campo `version` de esa entry en tu `marketplace.json`
 4. Commit + push (puedes usar `/release` o a mano)
-5. Tus consumers ejecutan `/plugin update <name>` (o abren sesión nueva) y reciben los cambios
+5. Tus consumers ejecutan `/plugin update <name>` (o abren sesión nueva)
 
-**Sin `/update-check` no pasa nada malo**, simplemente te toca a ti revisar dev-forge de vez en cuando para ver si hay nuevas releases.
+**Propios** (los `nemo-*`): editas el código del plugin, bumpeas su `version` en `plugin.json` y en `marketplace.json`, commit + push.
 
 ## Pinning de versiones
 
-La fuerza del modelo referencia: `marketplace.json` actúa como **pin**. Si dev-forge libera una v2 que te rompe, tu marketplace puede quedarse en v1 todo el tiempo que quieras. Solo subes la versión cuando hayas validado los cambios.
+La fuerza del modelo referencia: `marketplace.json` actúa como **pin**. Si dev-forge libera una v2 que te rompe, tu marketplace puede quedarse en la anterior todo el tiempo que quieras. Solo subes la versión cuando hayas validado los cambios.
 
-## Atribución
+## Atribución (plugins referenciados)
 
 | Plugin | Upstream | Autor |
 |--------|----------|-------|
@@ -70,8 +83,6 @@ La fuerza del modelo referencia: `marketplace.json` actúa como **pin**. Si dev-
 | `forge-deep-review` | [`pr-review-toolkit`](https://github.com/anthropics/claude-code/tree/main/plugins/pr-review-toolkit) + [`code-review`](https://github.com/anthropics/claude-code/tree/main/plugins/code-review) | Daisy Hollman, Boris Cherny (Anthropic) |
 | `forge-deepthink`, `forge-keeper` | Originales de [dev-forge](https://github.com/dmedina-dev/dev-forge) | David Medina |
 
-`dev-forge` curó/adaptó los anteriores; nemonemo solo los re-expone como catálogo.
-
 ## License
 
-MIT (este catálogo). Cada plugin mantiene su licencia upstream (MIT en todos los casos a fecha 2026-05-26).
+MIT (este catálogo y los plugins propios). Cada plugin referenciado mantiene su licencia upstream.

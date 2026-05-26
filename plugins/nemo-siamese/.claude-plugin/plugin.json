@@ -1,0 +1,10 @@
+{
+  "name": "nemo-siamese",
+  "description": "SessionStart greeting: prints an ASCII Siamese cat at the beginning of every Claude Code session.",
+  "version": "0.1.0",
+  "author": {
+    "name": "cristianbotella-arch"
+  },
+  "license": "MIT",
+  "keywords": ["greeting", "session-start", "ascii-art", "cat"]
+}

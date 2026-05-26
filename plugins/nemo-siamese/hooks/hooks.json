@@ -1,0 +1,15 @@
+{
+  "description": "SessionStart greeting — outputs the ASCII Siamese cat as additional session context.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/hooks/siamese.txt\""
+          }
+        ]
+      }
+    ]
+  }
+}
