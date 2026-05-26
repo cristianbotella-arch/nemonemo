@@ -1,0 +1,33 @@
+{
+  "origin": {
+    "type": "github",
+    "repo": "dmedina-dev/dev-forge",
+    "path": "plugins/forge-deepthink",
+    "ref": "main",
+    "fetched_at": "2026-05-26",
+    "check_url": "https://github.com/dmedina-dev/dev-forge/tree/main/plugins/forge-deepthink"
+  },
+  "customizations": [
+    {
+      "id": "custom-01",
+      "type": "modified",
+      "target": ".claude-plugin/plugin.json",
+      "summary": "Renamed forge-deepthink → nemo-deepthink; reset version to 0.1.0; pointed repository to nemonemo",
+      "reason": "Brand alignment with nemonemo marketplace."
+    },
+    {
+      "id": "custom-02",
+      "type": "modified",
+      "target": "commands/deepthink.md",
+      "summary": "Updated Skill invocation: forge-deepthink:deep-think → nemo-deepthink:deep-think",
+      "reason": "The Skill tool addresses skills as <plugin-name>:<skill-name>; the plugin rename forces this update."
+    },
+    {
+      "id": "custom-03",
+      "type": "modified",
+      "target": "skills/deep-think/SKILL.md",
+      "summary": "Updated reference: 'forge-deepthink plugin' → 'nemo-deepthink plugin' in description",
+      "reason": "Documentation alignment with the new plugin name."
+    }
+  ]
+}

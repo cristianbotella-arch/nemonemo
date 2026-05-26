@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Nemonemo — marketplace personal de plugins de Claude Code.",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
@@ -15,6 +15,36 @@
         "source": "git-subdir",
         "url": "https://github.com/cristianbotella-arch/nemonemo.git",
         "path": "plugins/nemo-commit"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "name": "nemo-security",
+      "description": "Security reminder hook: warns about potential security issues (command injection, XSS, eval, pickle, etc.) when editing files. Passive, low overhead.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/cristianbotella-arch/nemonemo.git",
+        "path": "plugins/nemo-security"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "name": "nemo-deepthink",
+      "description": "Structured deep-thinking protocol invoked via /deepthink — pre-filled 7-slot interview, audit-ready response with red-team, pre-mortem, and assumption audit.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/cristianbotella-arch/nemonemo.git",
+        "path": "plugins/nemo-deepthink"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "name": "nemo-deep-review",
+      "description": "Specialized review: 5 deep-review agents (test coverage, silent failures, type design, comments, simplification) + automated PR review with inline GitHub comments.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/cristianbotella-arch/nemonemo.git",
+        "path": "plugins/nemo-deep-review"
       },
       "version": "0.1.0"
     }

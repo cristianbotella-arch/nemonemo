@@ -1,0 +1,8 @@
+{
+  "name": "nemo-deep-review",
+  "description": "Specialized review: 5 deep-review agents (test coverage, silent failures, type design, comments, simplification) + automated PR review with inline GitHub comments.",
+  "version": "0.1.0",
+  "author": {
+    "name": "cristianbotella-arch"
+  }
+}
