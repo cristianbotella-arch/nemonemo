@@ -19,6 +19,7 @@ Combina dos modelos:
 /plugin install forge-security
 /plugin install forge-deepthink
 /plugin install forge-deep-review
+/plugin install forge-proactive-qa    # requiere Playwright instalado en el proyecto objetivo
 ```
 
 ## Plugins
@@ -38,6 +39,7 @@ Combina dos modelos:
 | **forge-security** | Hook | Hook `PreToolUse` en `Edit`/`Write`/`MultiEdit` que avisa de patrones inseguros |
 | **forge-deepthink** | Command + Skill | `/deepthink` + skill `deep-think` (protocolo de razonamiento) |
 | **forge-deep-review** | Agents + Commands | 5 agents + `/deep-review`, `/pr-review` |
+| **forge-proactive-qa** | Command + Skill + Rules + Scripts | Agente autónomo de QA con Playwright. `/proactive-qa init`, modos `explore` / `autofix` / `cycle` (pensado para `/loop`). Requiere Playwright en el proyecto objetivo. |
 
 ## Estructura del repo
 

@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Nemonemo — marketplace personal de plugins de Claude Code. Plugins propios + curaduría de terceros como referencia.",
-    "version": "1.2.0"
+    "version": "1.3.0"
   },
   "plugins": [
     {
@@ -91,6 +91,21 @@
         "repo": "dmedina-dev/dev-forge",
         "ref": "main",
         "url": "https://github.com/dmedina-dev/dev-forge/tree/main/plugins/forge-keeper"
+      }
+    },
+    {
+      "name": "forge-proactive-qa",
+      "description": "Autonomous QA agent: explores web apps with Playwright to find bugs, auto-fixes them with validation and retry. Three modes: explore (browse and log), autofix (fix with retry), cycle (alternate for /loop).",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/dmedina-dev/dev-forge.git",
+        "path": "plugins/forge-proactive-qa"
+      },
+      "version": "1.2.1",
+      "upstream": {
+        "repo": "dmedina-dev/dev-forge",
+        "ref": "main",
+        "url": "https://github.com/dmedina-dev/dev-forge/tree/main/plugins/forge-proactive-qa"
       }
     }
   ]

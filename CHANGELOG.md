@@ -4,6 +4,17 @@
 >
 > Maintainer-only entries (no consumer-facing changes) are noted as `## maintenance — YYYY-MM-DD` and do not bump `metadata.version`.
 
+## v1.3.0 — 2026-05-26
+
+Añadido `forge-proactive-qa` como referencia: agente autónomo de QA con Playwright (3 modos, pensado para `/loop`).
+
+Plugins bumped:
+- forge-proactive-qa: NEW → 1.2.1 (referencia a `dmedina-dev/dev-forge@main`)
+
+Marketplace: 1.2.0 → 1.3.0 (minor — nuevo plugin referenciado, sin breaking)
+
+Breaking changes: none
+
 ## maintenance — 2026-05-26
 
 Added local maintainer tooling — no changes to the catalog, no version bump.
