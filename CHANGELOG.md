@@ -2,6 +2,38 @@
 
 > Format: each release is `## vX.Y.Z — YYYY-MM-DD` with a one-line summary, `Plugins bumped:`, `Marketplace:`, `Breaking changes:`, and (when applicable) `Upstream pin state`.
 
+## v1.0.0 — 2026-05-26
+
+Cambio de modelo: de **vendoring** (copias en `plugins/nemo-*`) a **referencia** (catálogo que apunta a `dmedina-dev/dev-forge`). Se añade `forge-keeper` para tener `/update-check`.
+
+Plugins bumped:
+- nemo-commit (0.1.0) → REMOVED, reemplazado por `forge-commit` 1.1.3 (referencia a dev-forge)
+- nemo-security (0.1.0) → REMOVED, reemplazado por `forge-security` 1.0.2 (referencia)
+- nemo-deepthink (0.1.0) → REMOVED, reemplazado por `forge-deepthink` 0.1.0 (referencia)
+- nemo-deep-review (0.1.0) → REMOVED, reemplazado por `forge-deep-review` 2.0.2 (referencia)
+- forge-keeper: NEW → 1.4.1 (referencia; aporta `/update-check`, `/sync`, `/status`, `/recall`, etc.)
+
+Marketplace: 0.2.0 → 1.0.0 (major — los plugins se renombran de `nemo-*` a `forge-*` porque en modo referencia el `name` del catálogo debe coincidir con el `plugin.json` del upstream)
+
+Breaking changes: **sí**. Los nombres de plugins cambian.
+
+### Migration
+
+```bash
+# Para cada plugin que tuvieras instalado:
+/plugin uninstall nemo-commit       && /plugin install forge-commit
+/plugin uninstall nemo-security     && /plugin install forge-security
+/plugin uninstall nemo-deepthink    && /plugin install forge-deepthink
+/plugin uninstall nemo-deep-review  && /plugin install forge-deep-review
+# Nuevo (para tener /update-check):
+/plugin install forge-keeper
+```
+
+Las customizaciones que vivían en los plugins vendorizados desaparecen (rebranding de `/release` a "nemonemo", etc.). El comando `/release` sigue funcionando pero menciona "dev-forge" en sus mensajes.
+
+Upstream pin state post-release:
+- Todo apunta a `dmedina-dev/dev-forge` main (versiones según `marketplace.json`)
+
 ## v0.2.0 — 2026-05-26
 
 Añadidos 3 plugins curados desde `dmedina-dev/dev-forge`: hook de seguridad, skill de deep-thinking, agentes de code review.
