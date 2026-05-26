@@ -1,0 +1,8 @@
+{
+  "name": "nemo-commit",
+  "description": "Git workflow commands: /commit (smart commit), /commit-push-pr (branch → commit → push → PR), /clean-gone (remove stale branches), /release (marketplace release with version bumps).",
+  "version": "0.1.0",
+  "author": {
+    "name": "cristianbotella-arch"
+  }
+}

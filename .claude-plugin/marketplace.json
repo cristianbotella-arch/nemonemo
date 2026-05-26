@@ -1,0 +1,22 @@
+{
+  "name": "nemonemo",
+  "owner": {
+    "name": "cristianbotella-arch"
+  },
+  "metadata": {
+    "description": "Nemonemo — marketplace personal de plugins de Claude Code.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "nemo-commit",
+      "description": "Git workflow commands: /commit (smart commit), /commit-push-pr (branch → commit → push → PR), /clean-gone (remove stale branches), /release (marketplace release with version bumps).",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/cristianbotella-arch/nemonemo.git",
+        "path": "plugins/nemo-commit"
+      },
+      "version": "0.1.0"
+    }
+  ]
+}
