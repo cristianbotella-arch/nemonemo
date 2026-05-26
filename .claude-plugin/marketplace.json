@@ -5,18 +5,18 @@
   },
   "metadata": {
     "description": "Nemonemo — marketplace personal de plugins de Claude Code. Plugins propios + curaduría de terceros como referencia.",
-    "version": "1.3.1"
+    "version": "1.3.2"
   },
   "plugins": [
     {
       "name": "nemo-siamese",
-      "description": "SessionStart greeting: prints the NEMO banner (ASCII Siamese cat + ball) and a random cat fact at the beginning of every Claude Code session.",
+      "description": "SessionStart greeting: prints an ASCII Siamese cat and a random cat fact at the beginning of every Claude Code session.",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/cristianbotella-arch/nemonemo.git",
         "path": "plugins/nemo-siamese"
       },
-      "version": "0.2.1"
+      "version": "0.2.2"
     },
     {
       "name": "forge-commit",

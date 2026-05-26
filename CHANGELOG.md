@@ -4,6 +4,17 @@
 >
 > Maintainer-only entries (no consumer-facing changes) are noted as `## maintenance — YYYY-MM-DD` and do not bump `metadata.version`.
 
+## v1.3.2 — 2026-05-26
+
+Simplificación del banner de `nemo-siamese`: se eliminan el marco, el rótulo "✦ NEMO ✦" y la pelota. Queda solo el gato ASCII + el cat fact. Descripción del plugin actualizada para reflejarlo.
+
+Plugins bumped:
+- nemo-siamese: 0.2.1 → 0.2.2 (patch — simplificación estética del banner, sin cambios funcionales)
+
+Marketplace: 1.3.1 → 1.3.2 (patch — solo cambios cosméticos)
+
+Breaking changes: none
+
 ## v1.3.1 — 2026-05-26
 
 Fix de `nemo-siamese`: el banner ASCII no se renderizaba al usuario. El hook emitía stdout plano, que en `SessionStart` solo entra como contexto del modelo y no se pinta en la UI. Ahora emite `hookSpecificOutput.additionalContext` con una directiva explícita para que Claude imprima el banner verbatim al inicio de su primera respuesta (compone bien con otros plugins de apertura como `rocazul-on-this-day`).
