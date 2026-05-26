@@ -28,7 +28,7 @@ try:
 except Exception:
     sys.exit(0)
 
-block = f"{banner}\n  ✿ {fact}"
+block = f"{banner}\n🐱 {fact}\n\n---"
 
 directive = (
     "INSTRUCCIÓN PARA TU PRIMERA RESPUESTA EN ESTA SESIÓN (plugin nemo-siamese):\n"

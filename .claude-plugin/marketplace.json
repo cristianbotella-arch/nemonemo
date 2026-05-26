@@ -16,7 +16,7 @@
         "url": "https://github.com/cristianbotella-arch/nemonemo.git",
         "path": "plugins/nemo-siamese"
       },
-      "version": "0.2.2"
+      "version": "0.2.3"
     },
     {
       "name": "nemo-caveman",
