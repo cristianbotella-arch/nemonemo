@@ -32,12 +32,14 @@ block = f"{banner}\n🐱 {fact}\n\n---"
 
 directive = (
     "INSTRUCCIÓN PARA TU PRIMERA RESPUESTA EN ESTA SESIÓN (plugin nemo-siamese):\n"
-    "Antes de cualquier otro contenido en tu primera respuesta — incluyendo "
-    "saludos, efemérides u otras directivas de apertura — imprime EXACTAMENTE "
-    "el siguiente bloque verbatim, conservando caracteres y saltos de línea:\n\n"
+    "Si hay otras directivas de apertura en esta sesión (p.ej. un saludo + "
+    "efeméride), ejecútalas PRIMERO, en el orden que ellas indiquen. "
+    "INMEDIATAMENTE DESPUÉS de esas aperturas — y antes de atender la petición "
+    "del usuario — imprime EXACTAMENTE el siguiente bloque verbatim, "
+    "conservando caracteres y saltos de línea:\n\n"
     f"{block}\n\n"
-    "Si hay otras directivas de apertura (p.ej. saludo + efeméride), van "
-    "INMEDIATAMENTE DESPUÉS de este bloque, en el orden que ellas indiquen.\n"
+    "Si no existe ninguna otra directiva de apertura, este bloque abre tu "
+    "primera respuesta.\n"
     "NO repitas este banner en respuestas posteriores de la misma sesión."
 )
 

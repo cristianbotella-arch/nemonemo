@@ -4,6 +4,17 @@
 >
 > Maintainer-only entries (no consumer-facing changes) are noted as `## maintenance — YYYY-MM-DD` and do not bump `metadata.version`.
 
+## v1.4.1 — 2026-05-27
+
+`nemo-siamese`: invertido el orden de apertura de sesión. El banner del gato ahora se imprime DESPUÉS del saludo + efeméride de otros plugins de apertura (p.ej. `rocazul-on-this-day`), en lugar de reclamar la primera posición. Solo cambia la directiva del hook `SessionStart`; el banner ASCII y el cat fact no cambian.
+
+Plugins bumped:
+- nemo-siamese: 0.2.3 → 0.2.4 (patch — reordenación de la apertura, sin cambios en el contenido del banner)
+
+Marketplace: 1.4.0 → 1.4.1 (patch — solo cambio de comportamiento de apertura, sin breaking)
+
+Breaking changes: none
+
 ## v1.4.0 — 2026-05-26
 
 Nuevo plugin propio `nemo-caveman`: añade el slash command `/caveman` para activar un modo de respuestas ultra-compactas (drop fluff, keep technical substance). Las instrucciones del modo van empotradas en el comando para que el plugin sea self-contained y portable entre máquinas — sin dependencia del plugin `forge-mattpocock`. Reglas adaptadas de `mattpocock/skills` (MIT), con atribución en el archivo.

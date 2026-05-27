@@ -1,7 +1,7 @@
 {
   "name": "nemo-siamese",
   "description": "SessionStart greeting: prints an ASCII Siamese cat and a random cat fact at the beginning of every Claude Code session.",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "author": {
     "name": "cristianbotella-arch"
   },

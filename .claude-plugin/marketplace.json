@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Nemonemo — marketplace personal de plugins de Claude Code. Plugins propios + curaduría de terceros como referencia.",
-    "version": "1.4.0"
+    "version": "1.4.1"
   },
   "plugins": [
     {
@@ -16,7 +16,7 @@
         "url": "https://github.com/cristianbotella-arch/nemonemo.git",
         "path": "plugins/nemo-siamese"
       },
-      "version": "0.2.3"
+      "version": "0.2.4"
     },
     {
       "name": "nemo-caveman",
