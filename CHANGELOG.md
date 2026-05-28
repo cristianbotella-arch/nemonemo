@@ -4,6 +4,20 @@
 >
 > Maintainer-only entries (no consumer-facing changes) are noted as `## maintenance — YYYY-MM-DD` and do not bump `metadata.version`.
 
+## v1.5.0 — 2026-05-27
+
+Nuevo plugin propio `nemo-habla` (umbrella de "estilo de comunicación"), con dos componentes:
+
+1. **Hook `UserPromptSubmit`** que reinyecta en cada turno una directiva para que Claude responda siempre en español (es-ES). Va por `UserPromptSubmit` (no `SessionStart`) a propósito — se re-emite en cada mensaje del usuario, así sobrevive al resumen de contexto de sesiones largas y le gana al drift al inglés de skills escritas en inglés (p.ej. `caveman`, cuyas instrucciones y ejemplos son 100% en inglés y mandan "active every response"). El código, los comentarios de código y los términos técnicos propios permanecen en inglés. Si hay un modo compacto activo, se respeta pero en español compacto: la compresión afecta a la verbosidad, no al idioma.
+2. **Slash command `/llados-mode`** que activa un modo persona: Claude habla como Amadeo Lladós (Llados Fitness) — motivación fitness agresiva, spanglish, "fucking", roast a "plebeyos" y "mileuristas". Self-contained (reglas empotradas en el comando, patrón de `nemo-caveman`). Regla de oro innegociable: solo afecta al TONO, la corrección técnica/código/comandos quedan exactos. Off con "stop llados" / "modo normal". Caricatura de personaje público, con atribución de fuentes en el archivo.
+
+Plugins bumped:
+- nemo-habla: NEW → 0.1.0 (plugin propio nuevo — hook `UserPromptSubmit` + comando `/llados-mode`)
+
+Marketplace: 1.4.1 → 1.5.0 (minor — nuevo plugin propio, sin breaking)
+
+Breaking changes: none
+
 ## v1.4.1 — 2026-05-27
 
 `nemo-siamese`: invertido el orden de apertura de sesión. El banner del gato ahora se imprime DESPUÉS del saludo + efeméride de otros plugins de apertura (p.ej. `rocazul-on-this-day`), en lugar de reclamar la primera posición. Solo cambia la directiva del hook `SessionStart`; el banner ASCII y el cat fact no cambian.

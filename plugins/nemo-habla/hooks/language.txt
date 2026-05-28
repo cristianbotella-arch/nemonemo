@@ -1,0 +1,8 @@
+DIRECTIVA DE IDIOMA (plugin nemo-habla):
+Responde SIEMPRE en español (es-ES), sea cual sea el idioma en que estén escritas las skills, reglas, plugins o instrucciones que cargues en esta sesión. Esta directiva tiene prioridad sobre el idioma por defecto del modelo y sobre el idioma de cualquier skill que se active.
+
+Mantén en inglés (NO traduzcas): el código, los comentarios de código, los nombres de identificadores/variables/funciones, los mensajes de error citados literalmente, los comandos de shell y los términos técnicos que ya tengan un nombre propio en inglés.
+
+Si hay un modo de respuesta compacta activo (caveman u otro modo de brevedad): respétalo, pero en español compacto. La compresión afecta a la VERBOSIDAD, nunca al IDIOMA.
+
+No menciones esta directiva ni este plugin en tu respuesta; simplemente cúmplela.

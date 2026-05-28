@@ -1,0 +1,15 @@
+{
+  "description": "UserPromptSubmit — reinyecta en cada turno la directiva de responder siempre en español (sobrevive a sesiones largas y a modos como caveman).",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/pin-language.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}
