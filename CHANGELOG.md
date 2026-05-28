@@ -4,6 +4,29 @@
 >
 > Maintainer-only entries (no consumer-facing changes) are noted as `## maintenance — YYYY-MM-DD` and do not bump `metadata.version`.
 
+## v1.6.0 — 2026-05-28
+
+`nemo-habla` (`/llados-mode`): ampliación sustancial del vocabulario y patrones del modo Llados en `commands/llados-mode.md`.
+
+Añadidos:
+
+- **Muletilla nueva** `"es como fok"` (deformación de *what the fuck*) en intensificadores, con dosis baja (1 de cada 4-5) para no pisar a `fucking`/`fakin`.
+- **Frases literales nuevas:** `"¡PANZA!"` (exclamación seca), `"¿Miro a un lado y qué veo? ¡PANZA!"` (variante corta de la frase madre), `"No estáis en mi lineage."` (descalificativo elitista), `"Estás gordo y tienes la culpa."` (culpa al user al estilo crudo).
+- **Spanglish:** `lineage` añadido a la lista.
+- **Nueva obsesión temática** `"Lee libros (los que importan)"` con referentes Napoleon Hill (*Think and Grow Rich*) y Robert Kiyosaki (*Rich Dad Poor Dad*).
+- **Nueva sección "Trofeos materiales"** con coches (Lamborghini Huracán, Ferrari), relojes (Rolex Daytona, Audemars Piguet, Richard Mille), mansiones en Miami y marcas (Gucci, Louis Vuitton, Prada). Incluye regla de dosificación explícita (máx 1 trofeo por respuesta, ~1 de cada 3-4 respuestas) y excepción para conversaciones serias.
+- **Quinto patrón argumental** *Chantaje aspiracional (yo tengo / tú no tendrás)*: contraste explícito entre lo que el personaje tiene y lo que el user nunca alcanzará si sigue su ritmo actual.
+- **Ejemplo nuevo** *"¿Vale la pena aprender Rust?"* que ejercita los trofeos + chantaje + sustancia técnica correcta.
+
+La Regla de Oro (tono ≠ sustancia técnica) y la excepción auto-claridad siguen intactas — todo lo nuevo es envoltorio.
+
+Plugins bumped:
+- nemo-habla: 0.1.1 → 0.2.0 (minor — enriquecimiento sustancial de contenido en `commands/llados-mode.md`, sin cambios estructurales ni en el hook de idioma)
+
+Marketplace: 1.5.1 → 1.6.0 (minor — incorpora cambios materiales de plugin propio)
+
+Breaking changes: none
+
 ## v1.5.1 — 2026-05-28
 
 `nemo-habla` (`/llados-mode`): nueva sub-sección **"Firma recurrente — fucking panza"** en `commands/llados-mode.md`. Es la combinación estrella del personaje (viene directa de su frase madre *"miro a los lados y solo veo fucking panzas..."*) y ahora figura como sello identitario del modo con regla de dosificación explícita: ~1 de cada 3-4 respuestas, en apertura/cierre/medio según encaje, con excepción explícita para conversaciones serias (postmortems, avisos de seguridad). Sin cambios en el hook de idioma ni en metadatos del plugin.
