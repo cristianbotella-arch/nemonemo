@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Nemonemo — marketplace personal de plugins de Claude Code. Plugins propios + curaduría de terceros como referencia.",
-    "version": "1.6.0"
+    "version": "1.7.0"
   },
   "plugins": [
     {
@@ -30,13 +30,13 @@
     },
     {
       "name": "nemo-habla",
-      "description": "Estilo de comunicación. Hook UserPromptSubmit que fuerza respuestas siempre en español (es-ES), incluso bajo caveman; y slash command /llados-mode que hace que Claude hable como Amadeo Lladós.",
+      "description": "Estilo de comunicación. Hook UserPromptSubmit que fuerza respuestas siempre en español (es-ES); slash command /llados-mode (modo Amadeo Lladós); slash command /castellano-antiguo (modo escriba medieval, siglos XIII-XV). Llados y castellano-antiguo son mutuamente excluyentes.",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/cristianbotella-arch/nemonemo.git",
         "path": "plugins/nemo-habla"
       },
-      "version": "0.2.0"
+      "version": "0.3.0"
     },
     {
       "name": "forge-commit",

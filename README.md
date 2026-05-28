@@ -15,7 +15,7 @@ Combina dos modelos:
 # Instalar los plugins que quieras
 /plugin install nemo-siamese          # gato siamés en ASCII al abrir sesión
 /plugin install nemo-caveman          # /caveman: respuestas ultra-compactas
-/plugin install nemo-habla            # español siempre (incluso bajo caveman) + /llados-mode
+/plugin install nemo-habla            # español siempre (incluso bajo caveman) + /llados-mode + /castellano-antiguo
 /plugin install forge-keeper          # /update-check + mantenimiento de contexto
 /plugin install forge-commit
 /plugin install forge-security
@@ -32,7 +32,7 @@ Combina dos modelos:
 |--------|------|-------------|
 | **nemo-siamese** | Hook | `SessionStart` que imprime un ASCII de un gato siamés al empezar cada sesión |
 | **nemo-caveman** | Command | `/caveman` activa modo respuestas ultra-compactas (drop fluff, keep technical substance). Adaptado de `mattpocock/skills` (MIT) |
-| **nemo-habla** | Hook + Command | Estilo de comunicación. Hook `UserPromptSubmit` que responde siempre en español (es-ES) incluso bajo `caveman`; código y comentarios siguen en inglés. `/llados-mode` activa modo persona Amadeo Lladós (solo tono; la corrección técnica no se toca) |
+| **nemo-habla** | Hook + Commands | Estilo de comunicación. Hook `UserPromptSubmit` que responde siempre en español (es-ES) incluso bajo `caveman`; código y comentarios siguen en inglés. `/llados-mode` activa modo persona Amadeo Lladós. `/castellano-antiguo` activa modo escriba medieval (siglos XIII-XV, grafías arcaicas, tratamiento de "vuestra merced"). Ambos modos sólo se activan vía slash command explícito, son mutuamente excluyentes y nunca tocan la corrección técnica |
 
 ### Referenciados desde [`dmedina-dev/dev-forge`](https://github.com/dmedina-dev/dev-forge)
 
@@ -68,7 +68,8 @@ nemonemo/
 │       │   ├── pin-language.sh
 │       │   └── language.txt
 │       └── commands/
-│           └── llados-mode.md
+│           ├── llados-mode.md
+│           └── castellano-antiguo.md
 ├── CHANGELOG.md
 ├── LICENSE
 └── README.md

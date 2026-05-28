@@ -1,10 +1,10 @@
 {
   "name": "nemo-habla",
-  "description": "Estilo de comunicación. Hook UserPromptSubmit que fuerza respuestas siempre en español (es-ES), incluso bajo caveman; y slash command /llados-mode que hace que Claude hable como Amadeo Lladós.",
-  "version": "0.2.0",
+  "description": "Estilo de comunicación. Hook UserPromptSubmit que fuerza respuestas siempre en español (es-ES), incluso bajo caveman; slash command /llados-mode (modo Amadeo Lladós); slash command /castellano-antiguo (modo escriba medieval, siglos XIII-XV). Llados y castellano-antiguo son mutuamente excluyentes.",
+  "version": "0.3.0",
   "author": {
     "name": "cristianbotella-arch"
   },
   "license": "MIT",
-  "keywords": ["language", "spanish", "user-prompt-submit", "communication-style", "persona", "llados"]
+  "keywords": ["language", "spanish", "user-prompt-submit", "communication-style", "persona", "llados", "castellano-antiguo", "medieval"]
 }

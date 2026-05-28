@@ -4,6 +4,25 @@
 >
 > Maintainer-only entries (no consumer-facing changes) are noted as `## maintenance — YYYY-MM-DD` and do not bump `metadata.version`.
 
+## v1.7.0 — 2026-05-28
+
+`nemo-habla`: nuevo slash command `/castellano-antiguo` (modo escriba castellano de la Baja Edad Media, siglos XIII-XV) mutuamente excluyente con `/llados-mode`. Ambos modos refuerzan activación SÓLO por slash command explícito — prohibida cualquier auto-activación por trigger phrases o inferencia de contexto.
+
+Añadidos:
+
+- **Nuevo comando** `commands/castellano-antiguo.md` con persona de escriba medieval: tratamiento de "vuestra merced" / "vos", reglas ortográficas arcaicas (`v` en imperfecto, `f-` inicial, `ç/z`, `x` por `j`, `nn/ñ`, contracciones, enclisis), léxico medieval (pronombres, adverbios, sustantivos, verbos), conjugaciones `-ades/-edes/-ides` y futuro analítico (`dezir vos he`). Fuente atribuida: CEDEC/INTEF Proyecto EDIA (CC BY-SA 4.0 ES), ampliada con arcaísmos del Cantar de Mio Cid y el Libro de Buen Amor.
+- **Exclusión mutua** entre `/llados-mode` y `/castellano-antiguo`: activar uno desactiva el otro.
+- **Sección "Activación SÓLO por slash command (INNEGOCIABLE)"** en ambos comandos: prohíbe activación automática por trigger phrases del texto, inferencia de contexto, similitud temática o sugerencia de otra skill / hook / agente. Sólo entran por invocación explícita de `/llados-mode` o `/castellano-antiguo`.
+- **Regla de oro** común: el modo es envoltorio de tono — bloques de código, comandos de shell, identificadores, mensajes de error y URLs van EXACTOS y en inglés moderno.
+- **Excepción auto-claridad** común: ambos modos rompen el personaje para avisos de seguridad y confirmaciones de acciones irreversibles.
+
+Plugins bumped:
+- nemo-habla: 0.2.0 → 0.3.0 (minor — nuevo slash command `/castellano-antiguo` + sección de activación-sólo-por-comando en ambos comandos)
+
+Marketplace: 1.6.0 → 1.7.0 (minor — incorpora feature nueva en plugin propio)
+
+Breaking changes: none
+
 ## v1.6.0 — 2026-05-28
 
 `nemo-habla` (`/llados-mode`): ampliación sustancial del vocabulario y patrones del modo Llados en `commands/llados-mode.md`.
