@@ -4,8 +4,8 @@
     "name": "cristianbotella-arch"
   },
   "metadata": {
-    "description": "Nemonemo — marketplace personal de plugins de Claude Code. Plugins propios + curaduría de terceros como referencia.",
-    "version": "1.8.0"
+    "description": "Nemonemo — marketplace personal de plugins de Claude Code. Solo plugins propios (vendorizados).",
+    "version": "2.0.0"
   },
   "plugins": [
     {
@@ -47,96 +47,6 @@
         "path": "plugins/nemo-comments"
       },
       "version": "0.1.0"
-    },
-    {
-      "name": "forge-commit",
-      "description": "Git workflow commands: /commit, /commit-push-pr, /clean-gone, /release (marketplace release).",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/dmedina-dev/dev-forge.git",
-        "path": "plugins/forge-commit"
-      },
-      "version": "1.1.3",
-      "upstream": {
-        "repo": "dmedina-dev/dev-forge",
-        "ref": "main",
-        "url": "https://github.com/dmedina-dev/dev-forge/tree/main/plugins/forge-commit"
-      }
-    },
-    {
-      "name": "forge-security",
-      "description": "Security reminder hook: warns about insecure patterns (XSS, eval, pickle, etc.) when editing files.",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/dmedina-dev/dev-forge.git",
-        "path": "plugins/forge-security"
-      },
-      "version": "1.0.2",
-      "upstream": {
-        "repo": "dmedina-dev/dev-forge",
-        "ref": "main",
-        "url": "https://github.com/dmedina-dev/dev-forge/tree/main/plugins/forge-security"
-      }
-    },
-    {
-      "name": "forge-deepthink",
-      "description": "Structured deep-thinking protocol invoked via /deepthink — pre-filled 7-slot interview, audit-ready response.",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/dmedina-dev/dev-forge.git",
-        "path": "plugins/forge-deepthink"
-      },
-      "version": "0.1.0",
-      "upstream": {
-        "repo": "dmedina-dev/dev-forge",
-        "ref": "main",
-        "url": "https://github.com/dmedina-dev/dev-forge/tree/main/plugins/forge-deepthink"
-      }
-    },
-    {
-      "name": "forge-deep-review",
-      "description": "Specialized review: 5 deep-review agents + automated PR review with inline GitHub comments.",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/dmedina-dev/dev-forge.git",
-        "path": "plugins/forge-deep-review"
-      },
-      "version": "2.0.2",
-      "upstream": {
-        "repo": "dmedina-dev/dev-forge",
-        "ref": "main",
-        "url": "https://github.com/dmedina-dev/dev-forge/tree/main/plugins/forge-deep-review"
-      }
-    },
-    {
-      "name": "forge-keeper",
-      "description": "Context maintenance: /sync (analyze diff and propose CLAUDE.md updates), /status, /recall, /update-check (check upstream updates for vendored plugins), /handoff, /segment-doc, /heal-plugin-cache.",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/dmedina-dev/dev-forge.git",
-        "path": "plugins/forge-keeper"
-      },
-      "version": "1.4.1",
-      "upstream": {
-        "repo": "dmedina-dev/dev-forge",
-        "ref": "main",
-        "url": "https://github.com/dmedina-dev/dev-forge/tree/main/plugins/forge-keeper"
-      }
-    },
-    {
-      "name": "forge-proactive-qa",
-      "description": "Autonomous QA agent: explores web apps with Playwright to find bugs, auto-fixes them with validation and retry. Three modes: explore (browse and log), autofix (fix with retry), cycle (alternate for /loop).",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/dmedina-dev/dev-forge.git",
-        "path": "plugins/forge-proactive-qa"
-      },
-      "version": "1.2.1",
-      "upstream": {
-        "repo": "dmedina-dev/dev-forge",
-        "ref": "main",
-        "url": "https://github.com/dmedina-dev/dev-forge/tree/main/plugins/forge-proactive-qa"
-      }
     }
   ]
 }

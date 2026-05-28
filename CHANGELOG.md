@@ -4,6 +4,43 @@
 >
 > Maintainer-only entries (no consumer-facing changes) are noted as `## maintenance — YYYY-MM-DD` and do not bump `metadata.version`.
 
+## v2.0.0 — 2026-05-28
+
+**Breaking change**: nemonemo deja de catalogar plugins referenciados desde [`dmedina-dev/dev-forge`](https://github.com/dmedina-dev/dev-forge). El marketplace pasa a ser **exclusivamente plugins propios vendorizados**. Los consumers que quieran seguir usando `forge-*` deben añadir el marketplace de dev-forge directamente.
+
+Eliminados (referencias a `dmedina-dev/dev-forge`):
+- forge-commit (1.1.3)
+- forge-security (1.0.2)
+- forge-deepthink (0.1.0)
+- forge-deep-review (2.0.2)
+- forge-keeper (1.4.1)
+- forge-proactive-qa (1.2.1)
+
+Cambios derivados:
+- `README.md`: borrada la sección "Referenciados desde dev-forge", la tabla de Atribución, la sección "Pinning de versiones" (era específica del modelo referencia) y las líneas `/plugin install forge-*` del Quick Start. Reescrito el flujo "Cómo funcionan los updates" simplificado para el caso de plugins propios. Estructura del repo actualizada (`marketplace.json` ya no menciona referencias).
+- `marketplace.json`: `metadata.description` actualizada a "Solo plugins propios (vendorizados)".
+
+Migración para consumers que tenían instalados los `forge-*` vía nemonemo:
+
+```bash
+# Añadir el marketplace upstream
+/plugin marketplace add dmedina-dev/dev-forge
+
+# Reinstalar desde su origen
+/plugin install forge-commit
+/plugin install forge-security
+/plugin install forge-deepthink
+/plugin install forge-deep-review
+/plugin install forge-keeper
+/plugin install forge-proactive-qa
+```
+
+Plugins bumped: ninguno (solo cambia el catálogo).
+
+Marketplace: 1.8.0 → 2.0.0 (major — cambio incompatible para consumers que dependían de las entries `forge-*` vía nemonemo).
+
+Breaking changes: sí — los 6 plugins listados arriba ya no se distribuyen a través de este marketplace. Quienes los tenían instalados vía nemonemo necesitan migrar a `dmedina-dev/dev-forge` directamente (ver migración).
+
 ## v1.8.0 — 2026-05-28
 
 Nuevo plugin propio `nemo-comments`: skill que se activa cuando Claude va a escribir o editar comentarios en código. Default: no comentar. Solo añade comentario si explica un WHY no obvio, y siempre conciso (1-2 líneas).
