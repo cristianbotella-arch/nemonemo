@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Nemonemo — marketplace personal de plugins de Claude Code. Plugins propios + curaduría de terceros como referencia.",
-    "version": "1.7.0"
+    "version": "1.8.0"
   },
   "plugins": [
     {
@@ -37,6 +37,16 @@
         "path": "plugins/nemo-habla"
       },
       "version": "0.3.0"
+    },
+    {
+      "name": "nemo-comments",
+      "description": "Skill que se activa cuando Claude va a escribir o editar comentarios en código (inline, JSDoc/TSDoc, docstrings, TODOs). Default: no comentar. Solo añade comentario si explica un WHY no obvio, y siempre conciso (1-2 líneas).",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/cristianbotella-arch/nemonemo.git",
+        "path": "plugins/nemo-comments"
+      },
+      "version": "0.1.0"
     },
     {
       "name": "forge-commit",

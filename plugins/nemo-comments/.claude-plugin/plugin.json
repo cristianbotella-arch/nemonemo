@@ -1,0 +1,16 @@
+{
+  "name": "nemo-comments",
+  "description": "Skill que se activa cuando Claude va a escribir o editar comentarios en código. Default: no comentar. Solo añadir comentario si explica un WHY no obvio. Comentarios concisos (1-2 líneas).",
+  "version": "0.1.0",
+  "author": {
+    "name": "cristianbotella-arch"
+  },
+  "license": "MIT",
+  "keywords": [
+    "code-comments",
+    "documentation",
+    "concise",
+    "code-quality",
+    "skill"
+  ]
+}

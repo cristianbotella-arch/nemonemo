@@ -4,6 +4,29 @@
 >
 > Maintainer-only entries (no consumer-facing changes) are noted as `## maintenance — YYYY-MM-DD` and do not bump `metadata.version`.
 
+## v1.8.0 — 2026-05-28
+
+Nuevo plugin propio `nemo-comments`: skill que se activa cuando Claude va a escribir o editar comentarios en código. Default: no comentar. Solo añade comentario si explica un WHY no obvio, y siempre conciso (1-2 líneas).
+
+Añadidos:
+
+- **Nuevo plugin** `plugins/nemo-comments/` con la skill `nemo-comments` (`skills/nemo-comments/SKILL.md`).
+- **Regla núcleo**: por defecto NO escribir comentarios. Un comentario solo justifica su existencia si explica algo que el código no puede expresar por sí mismo y que sorprendería al próximo lector.
+- **Qué SÍ justifica un comentario**: WHY no obvio, workaround referenciado, invariante sutil que el tipo no captura, gotcha del dominio, TODO/FIXME con ticket o contexto.
+- **Qué NO**: resumir lo que el código hace, repetir nombres de identificadores, narrar el contexto de la edición ("added for X flow", "fix for ticket Y"), marcar código eliminado, encabezados decorativos, docstrings inflados sobre funciones triviales.
+- **Longitud**: 1 línea por defecto, 2 si referencia ticket/issue, nunca un párrafo.
+- **Docstrings**: mismas reglas — un docstring multi-sección sobre una función pequeña con nombre claro y tipos es ruido.
+- **Tres preguntas filtro** antes de escribir cualquier comentario.
+- **6 ejemplos** en SKILL.md cubriendo: código autoexplicativo (sin comentario), WHY no obvio, workaround referenciado, invariante, anti-ejemplo de docstring inflado, TODO con contexto.
+- **Evals iniciales**: 3 casos en `evals/evals.json` (helper trivial, custom hook con bug de Safari, refactor que limpia ruido). Benchmark con baseline: with_skill 12/12 (100%), without_skill 8/12 (67%), Δ +0.30 pass rate.
+
+Plugins bumped:
+- nemo-comments: nuevo plugin a 0.1.0
+
+Marketplace: 1.7.0 → 1.8.0 (minor — nuevo plugin propio)
+
+Breaking changes: none
+
 ## v1.7.0 — 2026-05-28
 
 `nemo-habla`: nuevo slash command `/castellano-antiguo` (modo escriba castellano de la Baja Edad Media, siglos XIII-XV) mutuamente excluyente con `/llados-mode`. Ambos modos refuerzan activación SÓLO por slash command explícito — prohibida cualquier auto-activación por trigger phrases o inferencia de contexto.

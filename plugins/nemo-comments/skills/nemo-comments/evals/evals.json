@@ -1,0 +1,104 @@
+{
+  "skill_name": "nemo-comments",
+  "evals": [
+    {
+      "id": 0,
+      "name": "trivial-helper-no-comments",
+      "prompt": "Necesito un helper en TypeScript. Crea el archivo `src/utils/user.ts` con una función `isAdult(user: { birthDate: Date }): boolean` que devuelva true si la persona tiene 18 años cumplidos o más, contando solo años enteros (es decir, alguien nacido el 1 de enero de 2007 cumple los 18 el 1 de enero de 2025). Que sea named export. Usa `new Date()` para el momento actual.",
+      "expected_output": "Un archivo src/utils/user.ts con una función pequeña y autoexplicativa. SIN comentarios (ni inline, ni JSDoc, ni docstring). Nombres claros, lógica directa.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "no-line-comments",
+          "description": "El output no debe contener comentarios de una línea (`// ...`).",
+          "type": "absence",
+          "pattern": "//"
+        },
+        {
+          "id": "no-block-comments",
+          "description": "El output no debe contener bloques de comentario (`/* ... */`, JSDoc `/** */`).",
+          "type": "absence",
+          "pattern": "/*"
+        },
+        {
+          "id": "function-exists",
+          "description": "El output debe definir y exportar la función `isAdult`.",
+          "type": "presence",
+          "pattern": "export function isAdult"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "safari-workaround-keeps-one-why",
+      "prompt": "En React + TypeScript, crea un custom hook `useViewportSize` en `src/hooks/useViewportSize.ts` que devuelva `{ width, height }` del viewport y se actualice cuando cambie el tamaño. Importante: he detectado que en Safari iOS el evento `resize` se dispara dos veces seguidas al rotar el dispositivo (orientationchange), y eso provoca un doble render que me rompe una animación. Hay que debounciar el handler 50ms para evitarlo. Implementa el debounce inline (sin importar lodash). No añadas tests, solo el hook.",
+      "expected_output": "Un hook útil y conciso. Sin docstring inflado. Si hay comentario, debe ser uno corto (1 línea, máximo 2) que explique el WHY del debounce (el bug de Safari iOS al rotar). El resto del código sin comentarios redundantes.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "hook-exists",
+          "description": "El output debe definir y exportar el hook `useViewportSize`.",
+          "type": "presence",
+          "pattern": "useViewportSize"
+        },
+        {
+          "id": "debounce-implemented",
+          "description": "El código debe implementar el debounce (referencia a 50, setTimeout o clearTimeout).",
+          "type": "presence",
+          "pattern": "setTimeout"
+        },
+        {
+          "id": "why-comment-present",
+          "description": "Debe haber al menos un comentario corto que mencione el WHY (Safari/iOS/rotation/twice/double).",
+          "type": "regex_presence",
+          "pattern": "(?i)(safari|ios|rotation|orientationchange|twice|double|two)"
+        },
+        {
+          "id": "comments-stay-short",
+          "description": "Ningún comentario debe ocupar más de 2 líneas seguidas.",
+          "type": "max_consecutive_comment_lines",
+          "max": 2
+        },
+        {
+          "id": "no-jsdoc",
+          "description": "No debe haber bloques JSDoc (`/** */`) sobre el hook.",
+          "type": "absence",
+          "pattern": "/**"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "refactor-strips-noise",
+      "prompt": "He pegado este archivo en `src/checkout/total.ts` (mira el contenido en `inputs/eval-3/total.ts`). Refactoriza la función `calculateTotal` para que use `reduce` en lugar del bucle manual. Mantén el tipo `CartItem` exportado. No cambies el nombre de la función ni su firma.",
+      "expected_output": "El archivo refactorizado a `reduce`. El docstring inflado y los comentarios redundantes (los que narran lo evidente: 'Initialize total to zero', 'Loop through each item', 'Get current item', 'Multiply and add', etc.) deben haber desaparecido. Si queda algún comentario, debe estar justificado por un WHY no obvio (lo normal aquí: ninguno).",
+      "files": ["inputs/eval-3/total.ts"],
+      "assertions": [
+        {
+          "id": "uses-reduce",
+          "description": "La nueva implementación debe usar `.reduce(`.",
+          "type": "presence",
+          "pattern": ".reduce("
+        },
+        {
+          "id": "signature-preserved",
+          "description": "Debe seguir exportando `calculateTotal(items: CartItem[]): number`.",
+          "type": "regex_presence",
+          "pattern": "export\\s+function\\s+calculateTotal\\s*\\(\\s*items\\s*:\\s*CartItem\\[\\]\\s*\\)\\s*:\\s*number"
+        },
+        {
+          "id": "comment-count-reduced",
+          "description": "El número total de líneas con comentario debe ser estrictamente menor que en el input (input tiene ~17 líneas de comentario; un buen refactor debería dejar <=2).",
+          "type": "max_comment_lines",
+          "max": 3
+        },
+        {
+          "id": "no-narrative-comments",
+          "description": "No deben quedar comentarios narrativos del estilo 'Initialize ...', 'Loop ...', 'Multiply ...'.",
+          "type": "regex_absence",
+          "pattern": "(?i)(initialize|loop through|multiply unit price|grand total|running total|legacy|NEMO-)"
+        }
+      ]
+    }
+  ]
+}
