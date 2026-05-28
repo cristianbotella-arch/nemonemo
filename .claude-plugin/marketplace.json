@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Nemonemo — marketplace personal de plugins de Claude Code. Plugins propios + curaduría de terceros como referencia.",
-    "version": "1.5.0"
+    "version": "1.5.1"
   },
   "plugins": [
     {
@@ -36,7 +36,7 @@
         "url": "https://github.com/cristianbotella-arch/nemonemo.git",
         "path": "plugins/nemo-habla"
       },
-      "version": "0.1.0"
+      "version": "0.1.1"
     },
     {
       "name": "forge-commit",
