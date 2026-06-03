@@ -10,7 +10,7 @@ Marketplace personal de plugins de Claude Code. Solo plugins propios (vendorizad
 
 # Instalar los plugins que quieras
 /plugin install nemo-siamese          # gato siamés en ASCII al abrir sesión
-/plugin install nemo-caveman          # /caveman: respuestas ultra-compactas
+/plugin install nemo-caveman          # /terse: respuestas ultra-compactas
 /plugin install nemo-habla            # español siempre (incluso bajo caveman) + /llados-mode + /castellano-antiguo
 /plugin install nemo-comments         # skill: comentarios de código mínimos y concisos
 ```
@@ -20,7 +20,7 @@ Marketplace personal de plugins de Claude Code. Solo plugins propios (vendorizad
 | Plugin | Tipo | Descripción |
 |--------|------|-------------|
 | **nemo-siamese** | Hook | `SessionStart` que imprime un ASCII de un gato siamés al empezar cada sesión |
-| **nemo-caveman** | Command | `/caveman` activa modo respuestas ultra-compactas (drop fluff, keep technical substance). Adaptado de `mattpocock/skills` (MIT) |
+| **nemo-caveman** | Command | `/terse` activa modo respuestas ultra-compactas (drop fluff, keep technical substance). Adaptado de `mattpocock/skills` (MIT) |
 | **nemo-habla** | Hook + Commands | Estilo de comunicación. Hook `UserPromptSubmit` que responde siempre en español (es-ES) incluso bajo `caveman`; código y comentarios siguen en inglés. `/llados-mode` activa modo persona Amadeo Lladós. `/castellano-antiguo` activa modo escriba medieval (siglos XIII-XV, grafías arcaicas, tratamiento de "vuestra merced"). Ambos modos sólo se activan vía slash command explícito, son mutuamente excluyentes y nunca tocan la corrección técnica |
 | **nemo-comments** | Skill | Se activa cuando Claude va a escribir o editar comentarios en código (inline, JSDoc/TSDoc, docstrings, TODOs). Default: no comentar. Solo añade comentario si explica un WHY no obvio, y siempre conciso (1-2 líneas). Aplica las mismas reglas a docstrings que a comentarios inline |
 
@@ -39,7 +39,7 @@ nemonemo/
 │   ├── nemo-caveman/          # Plugin propio (vendorizado)
 │   │   ├── .claude-plugin/plugin.json
 │   │   └── commands/
-│   │       └── caveman.md
+│   │       └── terse.md
 │   ├── nemo-habla/            # Plugin propio (vendorizado)
 │   │   ├── .claude-plugin/plugin.json
 │   │   ├── hooks/

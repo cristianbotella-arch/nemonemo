@@ -4,6 +4,23 @@
 >
 > Maintainer-only entries (no consumer-facing changes) are noted as `## maintenance — YYYY-MM-DD` and do not bump `metadata.version`.
 
+## v3.0.0 — 2026-06-03
+
+**Breaking change**: el slash command de `nemo-caveman` se renombra de `/caveman` a `/terse` para eliminar la colisión de nombre con la skill `caveman` del plugin `forge-mattpocock` (ambos registraban el token corto `caveman`, dejando `/caveman` ambiguo en el menú de comandos). El plugin sigue llamándose `nemo-caveman`; el modo conceptual ("caveman mode") y los off-switches ("stop caveman" / "normal mode") no cambian — solo cambia el trigger del slash.
+
+Cambios:
+- `plugins/nemo-caveman/commands/caveman.md` → renombrado a `commands/terse.md` (el nombre del comando deriva del nombre de fichero).
+- `plugin.json` + entry de `marketplace.json`: descripción actualizada (`/caveman` → `/terse`).
+- `README.md`: Quick Start, tabla de plugins y árbol de estructura actualizados.
+
+Migración para consumers:
+- Donde antes invocabas `/caveman`, ahora invoca `/terse`. Tras `/plugin update nemo-caveman` (o abrir sesión nueva) el comando `/caveman` ya no existirá en este plugin.
+
+Plugins bumped:
+- nemo-caveman: 0.1.0 → 1.0.0 (major — comando renombrado)
+
+Marketplace: 2.0.0 → 3.0.0 (major — el bump más alto del release es major; el rename invalida la cache del comando antiguo en consumers).
+
 ## v2.0.0 — 2026-05-28
 
 **Breaking change**: nemonemo deja de catalogar plugins referenciados desde [`dmedina-dev/dev-forge`](https://github.com/dmedina-dev/dev-forge). El marketplace pasa a ser **exclusivamente plugins propios vendorizados**. Los consumers que quieran seguir usando `forge-*` deben añadir el marketplace de dev-forge directamente.
